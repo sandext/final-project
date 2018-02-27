@@ -266,3 +266,53 @@ nav ul ul li {
 #home {
   cursor: pointer;
 }
+
+.chat-container{
+  position: fixed;
+  bottom: 0;
+  right: 40px;
+}
+
+.chat-button{
+  height: 30px;
+  width: 270px;
+  text-align: center;
+  background-color: #FE052C;
+  color: white;
+  cursor: pointer;
+}
+
+.no-display{
+  display: none;
+}
+
+#chat-dialog{
+  background-color: #eee;
+  height: 370px;
+  border-radius: 5px 5px 0 0;
+  border: 1px solid #ccc;
+  width: 270px;
+}
+
+.message{
+  margin: 0.5em;
+}
+
+.message-content{
+  background-color: #999;
+  color: #FE052C;
+  padding: 0.2em 0.5em;
+  border-radius: 0px 5px;
+  display: inline-block;
+}
+
+.message-container{
+  overflow-y: scroll;
+  max-height: 309px;
+}
+
+.chat-form {
+  position:fixed;
+  bottom:37px;
+  margin: 0.5em;
+}

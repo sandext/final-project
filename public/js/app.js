@@ -1,7 +1,3 @@
-/*
-  Please add all Javascript code to this file.
-*/
-
 (function(){
   $( document ).ready(function() {
     getData("country=us");
@@ -14,7 +10,6 @@
     })
     .done(function(data, textStatus, jqXHR) {
       var object = data.articles;
-      console.log(object);
       var template = object.map((el, key) =>
         `
         <article class="article">
@@ -25,9 +20,7 @@
               <a href="" class="article-title"><h3>${el.title}</h3></a>
               <h6>${el.source.name}</h6>
           </section>
-          <section class="impressions">
-            526
-          </section>
+
           <div class="clearfix">
           </div>
           <div class="article-content">
@@ -86,4 +79,38 @@
       }
     })
   });
+
+
+  $('.chat-button').on('click', function(){
+    $('#chat-dialog').toggleClass('no-display');
+  })
+
+
+
+  // Socket.io documentation
+
+  var socket = io();
+  var form = $('.form');
+
+  $('button').on('click', function(){
+    submit();
+  });
+
+  form.on('keydown', function(evt) {
+      if (evt.which == 13) {
+        event.preventDefault();
+        submit();
+      }
+  });
+
+  socket.on('finish', function(phrase){
+    $('.message-container').append(`<div class="message"><span class="message-content">${phrase}</span></div>`)
+  });
+
+////////Refactoring click event//////
+  function submit (){
+    socket.emit('chat message', form.val());
+    form.val('');
+    return false;
+  }
 })($)

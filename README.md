@@ -1,18 +1,18 @@
-JSD-Unit-2-Project
+JSD-Unit-4-Project
 -
 
 ```
-  
-  git clone https://github.com/sandext/JSD-Unit-2-Project.git
-  
-```
 
-
-**Launch Using http-server**
+  git clone
 
 ```
 
-  npm install -g http-server
+
+**Launch Using nodemon**
+
+```
+
+  npm install -g nodemon
 
 ```
 
@@ -27,3 +27,8 @@ JSD-Unit-2-Project
 >
 > Hover on caret to toggle over other news paper 🤪
 >
+>link available to go to the actual news article
+
+**Chat**
+Chat feature using socketIO
+allows to chat with multiple users using local IP address
